@@ -12,7 +12,11 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js --watch"
+    "dev": "nodemon index.js --watch",
+    "build:ui": "rm -rf dist && cd ../fullstack-Open-Exercises/part2/phone_book && npm run build && cp -r dist ../../../phonebook-api",
+    "deploy": "fly deploy",
+    "deploy:full": "npm run build:ui && npm run deploy",    
+    "logs:prod": "fly logs"
   },
   "author": "",
   "license": "ISC",

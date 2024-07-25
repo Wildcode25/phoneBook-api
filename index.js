@@ -26,10 +26,11 @@ const db = [
     }
 ]
 
-app.use(express.json())
+
 app.use(express.static('dist'))
 app.use(cors())
 app.use(morgan('dev'))
+app.use(express.json())
 app.get('/api/persons', (req, res)=>{
     res.json(db)
 })
